@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Bem Vindos</title>
+</h:head>
+
+<h:body>
+	<h:form style="margin-left: 500px;margin-top:200px">
+
+		<h:outputLabel style="font-family: Arial, Helvetica, sans-serif;">Você está em um conversor </h:outputLabel>
+		<h:outputLabel style="font-family: Arial, Helvetica, sans-serif;">de Números Decimais para Romanos.!</h:outputLabel>
+		<br />
+		<br />
+		<h:messages
+			style="font-family: Arial, Helvetica, sans-serif;color:#CD8162" />
+		<br />
+
+		<h:panelGrid columns="2">
+			<h:outputLabel value="Ensira o Valor a Ser Convertido:"
+				style="font-family: Arial, Helvetica, sans-serif;" />
+			<h:inputText value="#{numeroBean.numero.elemento}"
+				style="width:50px;border-radius:8px" />
+
+
+			<h:panelGroup>
+				<h:commandButton value="Converter" action="#{numeroBean.converter}" />
+				<h:commandButton value="Limpar" action="#{numeroBean.limpar}" />
+				<br />
+
+
+				<h:outputText value="Decimal:"
+					style="font-family: Arial, Helvetica, sans-serif;" />
+				<h:inputText value="#{numeroBean.numero.elemento}" readonly="true"
+					style="width:50px;border-radius:8px" />
+				<br />
+				<h:outputText value="Romano:"
+					style="font-family: Arial, Helvetica, sans-serif;" />
+				<h:inputText value="#{numeroBean.numero.emRomano}" readonly="true"
+					style="width:50px;border-radius:8px" />
+			</h:panelGroup>
+
+		</h:panelGrid>
+		<h:outputText style="font-family: Arial, Helvetica, sans-serif;"
+			value="Se Assim desejar Salve Essa conversão senão clique no botão Limpar" />
+		<br />
+		<h:commandButton value="Salvar" action="#{numeroBean.salvar}" />
+
+
+	</h:form>
+</h:body>
+</html>
